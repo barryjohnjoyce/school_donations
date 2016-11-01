@@ -3,17 +3,18 @@ queue()
     // from multiple APIs for a single analysis. The queue function process that data hosted at the API
     // and inserts it into the apiData variable.
    .defer(d3.json, "/donorsUS/projects")
+    .defer(d3.json, "/static/us-states.json")
    .await(makeGraphs);
 
-function makeGraphs(error, projectsJson) {
+function makeGraphs(error, projectsJson, statesJson) {
 
    //Clean projectsJson data
    var donorsUSProjects = projectsJson; //passes data inside projectsJson variable into dataSet variable.
    var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
    donorsUSProjects.forEach(function (d) {
-       d["date_posted"] = dateFormat.parse(d["date_posted"]); //parses date data to chart suitability
+       d["date_posted"] = dateFormat.parse(d["date_posted"]); //formats json date string to actual date
        d["date_posted"].setDate(1); //sets all project date days to 1.
-       d["total_donations"] = +d["total_donations"]; //sets data type to a number
+       d["total_donations"] = +d["total_donations"]; //formats json number to actual number
    });
 
 
@@ -24,6 +25,7 @@ function makeGraphs(error, projectsJson) {
    var dateDim = ndx.dimension(function (d) {
        return d["date_posted"];
    });
+
    var resourceTypeDim = ndx.dimension(function (d) {
        return d["resource_type"];
    });
@@ -41,16 +43,37 @@ function makeGraphs(error, projectsJson) {
        return d["funding_status"];
    });
 
+     var schoolCity = ndx.dimension(function (d) {
+       return d["school_city"];
+   });
+
+    var primaryFocusAreaDim = ndx.dimension(function (d) {
+       return d["primary_focus_area"];
+   });
+
+
+
+
 
    //Calculate metrics
    var numProjectsByDate = dateDim.group();
    var numProjectsByResourceType = resourceTypeDim.group();
    var numProjectsByPovertyLevel = povertyLevelDim.group();
    var numProjectsByFundingStatus = fundingStatus.group();
+    var numProjectsByCity = schoolCity.group();
+    var numProjectsByPrimaryFocusArea = primaryFocusAreaDim.group();
+
+
    var totalDonationsByState = stateDim.group().reduceSum(function (d) {
        return d["total_donations"];
    });
-   var stateGroup = stateDim.group();
+
+    var primaryFocusAreaByDonation = primaryFocusAreaDim.group().reduceSum(function (d) {
+       return d["total_donations"];
+   });
+
+
+    var stateGroup = stateDim.group();
 
 
    var all = ndx.groupAll();
@@ -60,9 +83,11 @@ function makeGraphs(error, projectsJson) {
 
    var max_state = totalDonationsByState.top(1)[0].value;
 
+
    //Define values (to be used in charts)
    var minDate = dateDim.bottom(1)[0]["date_posted"];
    var maxDate = dateDim.top(1)[0]["date_posted"];
+
 
    //Charts: defines chart type objects using DC.js library & binds to charts to the div IDs in index.html
    var timeChart = dc.barChart("#time-chart");
@@ -71,11 +96,22 @@ function makeGraphs(error, projectsJson) {
    var numberProjectsND = dc.numberDisplay("#number-projects-nd");
    var totalDonationsND = dc.numberDisplay("#total-donations-nd");
    var fundingStatusChart = dc.pieChart("#funding-chart");
+    var cityChart = dc.pieChart("#city-chart");
+    var fundingStatusmap = dc.geoChoroplethChart("#funding-map");
+    var primaryFocusAreaChart = dc.pieChart("#focus-area");
+    var primaryFocusAreaByTotalDonationsChart = dc.barChart("#focus-area2");
+
+
+
 
 
    selectField = dc.selectMenu('#menu-select')
        .dimension(stateDim)
        .group(stateGroup);
+
+    selectField2 = dc.selectMenu('#menu-select2')
+       .dimension(schoolCity)
+       .group(numProjectsByCity);
 
 
    numberProjectsND
@@ -103,7 +139,7 @@ function makeGraphs(error, projectsJson) {
        .x(d3.time.scale().domain([minDate, maxDate]))
        .elasticY(true)
        .xAxisLabel("Year")
-       .yAxis().ticks(4);
+       .yAxis().ticks(2);
 
    resourceTypeChart
        .width(300)
@@ -112,20 +148,74 @@ function makeGraphs(error, projectsJson) {
        .group(numProjectsByResourceType)
        .xAxis().ticks(4);
 
-   povertyLevelChart
-       .width(300)
+   primaryFocusAreaChart
+
+       .height(500)
+        .width(500)
+       .radius(200)
+       .innerRadius(0)
+       .transitionDuration(1500)
+       .dimension(primaryFocusAreaDim)
+       .group(numProjectsByPrimaryFocusArea);
+
+
+    primaryFocusAreaByTotalDonationsChart
+        .width(1200)
+        .height(600)
+        .margins({top: 10, right: 10, bottom: 100, left: 75})
+        .dimension(primaryFocusAreaDim)
+        .group(primaryFocusAreaByDonation)
+        .x (d3.scale.ordinal().domain(resourceTypeDim))
+        .xUnits(dc.units.ordinal)
+        .elasticY(true)
+        .yAxis().ticks(16);
+
+
+    povertyLevelChart
+       .width(600)
        .height(250)
        .dimension(povertyLevelDim)
        .group(numProjectsByPovertyLevel)
-       .xAxis().ticks(4);
+       .xAxis().ticks(20);
 
-   fundingStatusChart
+   fundingStatusChart //piechart
        .height(220)
        .radius(90)
        .innerRadius(40)
-       .transitionDuration(1500)
+       //.transitionDuration(1500)
        .dimension(fundingStatus)
-       .group(numProjectsByFundingStatus);
+        .ordinalColors(["red", "blue", "white"])
+        .group(numProjectsByFundingStatus);
+
+    cityChart
+       .height(500)
+        .width(500)
+       .radius(200)
+       .innerRadius(0)
+       .transitionDuration(1500)
+       .dimension(schoolCity)
+       .group(numProjectsByCity)
+
+
+    fundingStatusmap
+        .width(640)
+        .height(325)
+        .dimension(stateDim)
+        .group(totalDonationsByState)
+        //.colors(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#7C151D"])
+        .colorDomain([0, max_state])
+        .overlayGeoJson(statesJson["features"], "state", function (d) {
+            return d.properties.name;
+        })
+        .projection(d3.geo.albersUsa()
+            .scale(600)
+            .translate([340, 150]))
+        .title(function (p) {
+            return "State: " + p["key"]
+                + "\n"
+                + "Total Donations: US$" + Math.round(p["value"]);
+        });
+
 
 
    dc.renderAll();

@@ -6,8 +6,13 @@
    font-size: 60px;
 }
 
+/*.chart-title {
+   color: white
+}*/
 
-
+.chartbackground{
+   background-color: #3D4A57;
+   color: red}
 
 .dc-chart g.row text {
    fill: black;
@@ -15,7 +20,7 @@
 }
 
 #total-projects {
-   background: #33CC99;
+   background: #3D4A57;
    width: 200px;
    position: relative;
    height: 60px;
@@ -28,7 +33,7 @@
 }
 
 #net-donations {
-   background: #33CC99;
+   background: #3D4A57;
    width: 200px;
    position: relative;
    height: 60px;
@@ -42,7 +47,7 @@
 
 
 .dc-select-menu {
-   background: #33CC99;
+   background: red;
    width: 100%;
    border: none;
    position: relative;
@@ -53,5 +58,10 @@
    text-align: center;
    padding-top: 4px;
    padding-bottom: 0px;
-
 }
+
+.my-bar-chart .x.axis text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
