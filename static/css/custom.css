@@ -6,13 +6,15 @@
    font-size: 60px;
 }
 
-/*.chart-title {
-   color: white
-}*/
 
-.chartbackground{
+.chartBackground{
    background-color: #3D4A57;
-   color: red}
+   color: white;
+   border: 5px solid red;
+   border-radius: 10px;
+   margin: 20px;
+}
+
 
 .dc-chart g.row text {
    fill: black;
