@@ -130,8 +130,8 @@ function makeGraphs(error, projectsJson, statesJson) {
        .formatNumber(d3.format(".3s"));
 
  timeChart
-       .width(800)
-       .height(200)
+       .width(600)
+       .height(260)
        .margins({top: 10, right: 50, bottom: 30, left: 50})
        .dimension(dateDim)
        .group(numProjectsByDate)
@@ -139,53 +139,61 @@ function makeGraphs(error, projectsJson, statesJson) {
        .x(d3.time.scale().domain([minDate, maxDate]))
        .elasticY(true)
        .xAxisLabel("Year")
-       .yAxis().ticks(2);
-
-   resourceTypeChart
-       .width(300)
-       .height(250)
-       .dimension(resourceTypeDim)
-       .group(numProjectsByResourceType)
-       .xAxis().ticks(4);
-
-   primaryFocusAreaChart
-
-       .height(500)
-        .width(500)
-       .radius(200)
-       .innerRadius(0)
-       .transitionDuration(1500)
-       .dimension(primaryFocusAreaDim)
-       .group(numProjectsByPrimaryFocusArea);
+       .yAxis().ticks(5);
 
 
     primaryFocusAreaByTotalDonationsChart
-        .width(1200)
-        .height(600)
+        .width(600)
+        .height(300)
         .margins({top: 10, right: 10, bottom: 100, left: 75})
         .dimension(primaryFocusAreaDim)
         .group(primaryFocusAreaByDonation)
         .x (d3.scale.ordinal().domain(resourceTypeDim))
         .xUnits(dc.units.ordinal)
         .elasticY(true)
-        .yAxis().ticks(16);
+        .yAxis().ticks(8);
 
 
     povertyLevelChart
        .width(600)
-       .height(250)
+       .height(300)
        .dimension(povertyLevelDim)
        .group(numProjectsByPovertyLevel)
-       .xAxis().ticks(20);
+       .xAxis().ticks(10);
+
+
+    resourceTypeChart
+       .width(380)
+       .height(250)
+       .dimension(resourceTypeDim)
+       .group(numProjectsByResourceType)
+       .xAxis().ticks(5);
+
 
    fundingStatusChart //piechart
-       .height(220)
-       .radius(90)
+       .height(250)
+       .width (280)
+       .radius(100)
        .innerRadius(40)
        //.transitionDuration(1500)
        .dimension(fundingStatus)
         .ordinalColors(["red", "blue", "white"])
         .group(numProjectsByFundingStatus);
+
+
+    primaryFocusAreaChart //piechart
+       .height(250)
+        .width(470)
+       .radius(100)
+       .innerRadius(0)
+       .transitionDuration(1500)
+       .dimension(primaryFocusAreaDim)
+       .group(numProjectsByPrimaryFocusArea)
+        .legend(dc.legend().x(350).y(60).gap(7))
+        .renderLabel(false);
+
+
+
 
     cityChart
        .height(500)
@@ -198,8 +206,8 @@ function makeGraphs(error, projectsJson, statesJson) {
 
 
     fundingStatusmap
-        .width(640)
-        .height(325)
+        .width(900)
+        .height(315)
         .dimension(stateDim)
         .group(totalDonationsByState)
         //.colors(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#7C151D"])
@@ -215,8 +223,6 @@ function makeGraphs(error, projectsJson, statesJson) {
                 + "\n"
                 + "Total Donations: US$" + Math.round(p["value"]);
         });
-
-
 
    dc.renderAll();
 }

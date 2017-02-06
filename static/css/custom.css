@@ -1,3 +1,4 @@
+
 #number-projects-nd {
    font-size: 60px;
 }
@@ -7,13 +8,6 @@
 }
 
 
-.chartBackground{
-   background-color: #3D4A57;
-   color: white;
-   border: 5px solid red;
-   border-radius: 10px;
-   margin: 20px;
-}
 
 
 .dc-chart g.row text {
@@ -67,3 +61,22 @@
     transform: rotate(-45deg);
 }
 
+.chartBackground{
+   background-color: #3D4A57;
+   color: white;
+   border: 5px solid red;
+   border-radius: 10px;
+   margin: 20px;
+}
+
+.chart-title{
+   color: white !important;
+}
+
+select.dc-select-menu{
+   background-color: lightblue;
+}
+
+.chart-stage-white{
+   background-color: white;
+}
