@@ -8,8 +8,6 @@
 }
 
 
-
-
 .dc-chart g.row text {
    fill: black;
    font-size: 12px;
@@ -62,21 +60,58 @@
 }
 
 .chartBackground{
-   background-color: #3D4A57;
-   color: white;
-   border: 5px solid red;
+   background-color: #FAFAFA;
+   color: black;
+   border: 2px solid black;
    border-radius: 10px;
    margin: 20px;
 }
 
 .chart-title{
-   color: white !important;
+   color: black !important;
 }
 
 select.dc-select-menu{
-   background-color: lightblue;
+   background-color:  #1BB32A;
 }
 
 .chart-stage-white{
+   background-color: #FFFFFF;
+}
+
+.navbar{
+   height: 25px;
+}
+
+.navbar-brand {
+   float: none;
+   color: black;
+}
+
+.buttoncolor{
+   background-color: #1BB32A;
+   border-color: #1BB32A
+}
+
+.btn-primary:hover{
+   background-color: #1BB32A;
+   border-color: #159022;
+}
+
+.btn-primary{
+   border-color: #159022;
+   background-color:#1BB32A ;
+}
+
+.btn-primary:focus {
+   border-color: #159022;
+   background-color:#1BB32A ;
+}
+
+.navbar-inverse{
    background-color: white;
+}
+
+h1{
+    color: black
 }

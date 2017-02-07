@@ -12,15 +12,15 @@
 <!--END OF HEAD
 
 <!--START OF BODY-->
-<body class="application">
+<body class="application" style="background-color: #FAFAFA">
 
 <!--NAVBAR-->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" style="border: 5px deeppink solid; height: 100px" role="navigation">
 
-   <div class="container-fluid">
-       <div class="navbar-header">
-           <a class="navbar-brand">DonorsChoose.org Dashboard </a>
-           <button type="button" class="intro_button btn btn-primary" autofocus onclick="introJs().start();">Start Tour!</button>
+   <div class="container-fluid" style = "border: 5px brown solid; height: 100%" >
+       <div class="navbar-header"  style= "border: 5px yellow solid; float: none; text-align: center; height: 100%">
+           <img src="static/images/donorschooseimage.png" height="100%"/>
+           <a class="navbar-brand"><h1>DonorsChoose.org Interactive Dashboard</h1> </a>
        </div>
    </div>
 
@@ -29,9 +29,22 @@
 
 
 <!--NEW MAIN CONTAINER-->
-<div  id="outer" class="container-fluid background">
+<div  id="outer" class="container-fluid background" style="margin-top: 80px">
 
-  <!--FIRST ROW-->
+      <p>
+               DonorsChoose.org is a US based nonprofit organization that allows individuals to donate money directly to
+               public school classroom projects. Public school teachers post classroom project requests on the platform,
+               and individuals have the option to donate money directly to fund these projects. The classroom projects
+               range from pencils and books to computers and other expensive equipments for classrooms. In more than 10
+               years of existence, this platform helped teachers in all US states to post more than 7700,000 classroom
+               project requests and raise more than $280,000,000. DonorsChoose.org has made the platform data open and
+               available for making discoveries and building applications. This dashboard is an interactive data
+               visualization that represents school donations broken down by different attributes.
+           </p>
+           <button type="button" class="intro_button btn btn-primary buttoncolor" autofocus onclick="introJs().start();">Start Dashboard Tour!</button>
+
+
+    <!--FIRST ROW-->
     <div class = "row">
 
         <!--FIRST COLUMN COL-SM-6-->
@@ -47,9 +60,10 @@
 
                 <!--DIV WITH ID FOR MAP-->
                 <div class="chart-stage" >
-                    <div id="funding-map" data-step="10"
-                     data-intro="This map allows you to select information per state. Click on your chosen state"
-                     style="font-weight: normal" data-position="left">
+                    <div id="funding-map" data-step="1"
+                     data-intro="This map allows you to select information per state by clicking on your chosen state.
+                                Or chose your state from the dropdown menu below"
+                     style="font-weight: normal" data-position="right">
                     </div>
                 </div> <!--class="chart-stage"-->
 
@@ -60,7 +74,7 @@
                                 Select Your State
                             </div>
                             <div class="chart-stage">
-                                <div id="menu-select" data-step="5"
+                                <div id="menu-select" data-step="10"
                                     data-intro="You can sort the information per state through this select box"
                                     style="font-weight: normal" data-position="right"></div>
                             </div>
@@ -83,8 +97,9 @@
                            Total Number of Donations
                              </div>
                             <div class="chart-stage">
-                           <div id="number-projects-nd" data-step="6"
-                                data-intro="This box shows the total number of donations overall, per state or per city "
+                           <div id="number-projects-nd" data-step="2"
+                                data-intro="This box shows the total number of donations overall, or per state when a
+                                            state is selected."
                                 style="font-weight: normal" data-position="right"></div>
                             </div>
                          </div>
@@ -98,9 +113,10 @@
                             </div>
 
                          <div class="chart-stage">
-                           <div id="total-donations-nd" data-step="7"
-                                data-intro="This box shows the total amount of donations in USD"
-                                style="font-weight: normal" data-position="right"></div>
+                           <div id="total-donations-nd" data-step="3"
+                                data-intro="This box shows the total amount of donations in USD overall, or per state
+                                            when a state is selected."
+                                style="font-weight: normal" data-position="left"></div>
                             </div>
                         </div>
                     </div> <!-- Close Total Donations in US dollars Col-sm-3 -->
@@ -114,9 +130,9 @@
                            Number of Donations
                        </div>
                        <div class="chart-stage chart-stage-white">
-                           <div id="time-chart" data-step="1"
+                           <div id="time-chart" data-step="4"
                                 data-intro="This graph shows the number of donations per month between October 2002 and September 2007"
-                                style="font-weight: normal" data-position="right"></div>
+                                style="font-weight: normal" data-position="left"></div>
                        </div>
                  </div>
         </div>
@@ -139,7 +155,7 @@
                    Primary Focus Area by Total Donations
                </div>
                <div class="chart-stage chart-stage-white">
-                   <div id="focus-area2" class="my-bar-chart" data-step="12"
+                   <div id="focus-area2" class="my-bar-chart" data-step="5"
                      data-intro="This graph chart shows the number of projects per donation"
                      style="font-weight: normal" data-position="top"></div>
                </div>
@@ -155,7 +171,7 @@
                    Poverty Level
                </div>
                <div class="chart-stage chart-stage-white">
-                   <div id="poverty-level-row-chart" data-step="4"
+                   <div id="poverty-level-row-chart" data-step="6"
                         data-intro="This graph shows the number of projects per poverty level of school"
                         style="font-weight: normal" data-position="left"></div>
                </div>
@@ -174,7 +190,7 @@
                            Resources Type
                        </div>
                        <div class="chart-stage chart-stage-white">
-                           <div id="resource-type-row-chart" data-step="2"
+                           <div id="resource-type-row-chart" data-step="7"
                                 data-intro="This graph shows the number of projects per resource type"
                                 style="font-weight: normal" data-position="right"></div>
                        </div>
@@ -190,7 +206,7 @@
                            Funding Status
                        </div>
                        <div class="chart-stage chart-stage-white">
-                           <div id="funding-chart" data-step="3"
+                           <div id="funding-chart" data-step="8"
                                 data-intro="This pie-chart shows the number of projects that completed, not completed and have expired"
                                 style="font-weight: normal" data-position="right"></div>
                        </div>
@@ -206,9 +222,9 @@
                    Primary Focus Area by Number of Projects
                </div>
                <div class="chart-stage chart-stage-white">
-                   <div id="focus-area" data-step="11"
+                   <div id="focus-area" data-step="9"
                      data-intro="This pie chart shows the number of projects per focus area"
-                     style="font-weight: normal" data-position="right"></div>
+                     style="font-weight: normal" data-position="left"></div>
                </div>
            </div>
        </div>
