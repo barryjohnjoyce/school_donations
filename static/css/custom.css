@@ -14,7 +14,7 @@
 }
 
 #total-projects {
-   background: #3D4A57;
+
    width: 200px;
    position: relative;
    height: 60px;
@@ -27,7 +27,7 @@
 }
 
 #net-donations {
-   background: #3D4A57;
+
    width: 200px;
    position: relative;
    height: 60px;
@@ -79,39 +79,64 @@ select.dc-select-menu{
    background-color: #FFFFFF;
 }
 
-.navbar{
-   height: 25px;
+
+.titleDisplay {
+    display: inline-block;
+    margin-right: 55px;
+    margin-top: 20px;
 }
 
-.navbar-brand {
-   float: none;
-   color: black;
+img {
+
+    padding: 20px 20px;
 }
 
-.buttoncolor{
-   background-color: #1BB32A;
-   border-color: #1BB32A
+.dashboardButton{
+   background-color: #1CBA2C;
+   border-color: #1CBA2C;
+    margin-bottom: 10px;
 }
 
 .btn-primary:hover{
-   background-color: #1BB32A;
-   border-color: #159022;
-}
-
-.btn-primary{
-   border-color: #159022;
-   background-color:#1BB32A ;
+   background-color:  #1BB32A;
+   border-color:  #1BB32A;
 }
 
 .btn-primary:focus {
-   border-color: #159022;
-   background-color:#1BB32A ;
+   border-color: #1CBA2C;
+   background-color:#1CBA2C ;
 }
 
-.navbar-inverse{
-   background-color: white;
-}
 
 h1{
-    color: black
+    color: black;
+    text-align: center;
+}
+
+.topbar{
+    background-color: white;
+    height: 100px;
+    line-height: 100px;
+    white-space: nowrap;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0 0;
+    border-top: 3px solid #EF5F3C;
+}
+
+.backgroundImage{
+    background-image: url(https://cdn.donorschoose.net/images/homepage/homepage-intro-b.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 50%;
+    height: 350px;
+    opacity: .2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #000000;
+    z-index: -1;
+
 }

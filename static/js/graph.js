@@ -195,6 +195,7 @@ function makeGraphs(error, projectsJson, statesJson) {
 
 
 
+
     cityChart
        .height(500)
         .width(500)

@@ -12,37 +12,33 @@
 <!--END OF HEAD
 
 <!--START OF BODY-->
-<body class="application" style="background-color: #FAFAFA">
+<body class="application" style="background-color: #FAFAFA; font-family: Rockwell,Georgia-Bold,serif">
 
 <!--NAVBAR-->
-<div class="navbar navbar-inverse navbar-fixed-top" style="border: 5px deeppink solid; height: 100px" role="navigation">
+<div class="topbar navbar-fixed-top" role="navigation">
 
-   <div class="container-fluid" style = "border: 5px brown solid; height: 100%" >
-       <div class="navbar-header"  style= "border: 5px yellow solid; float: none; text-align: center; height: 100%">
-           <img src="static/images/donorschooseimage.png" height="100%"/>
-           <a class="navbar-brand"><h1>DonorsChoose.org Interactive Dashboard</h1> </a>
-       </div>
-   </div>
+           <a href="https://www.donorschoose.org/"><img src="static/images/donorschooseimage.png" height="100%"></a>
+           <h1 class="titleDisplay">DonorsChoose.org Interactive Dashboard</h1>
+            <button type="button" class="intro_button btn btn-primary dashboardButton" autofocus onclick="introJs().start();">Take Dashboard Tour!</button>
 
-</div>
-<!--END OF NAVBAR-->
-
+</div><!--END OF NAVBAR-->
 
 <!--NEW MAIN CONTAINER-->
-<div  id="outer" class="container-fluid background" style="margin-top: 80px">
-
-      <p>
-               DonorsChoose.org is a US based nonprofit organization that allows individuals to donate money directly to
+<div  id="outer" class="container-fluid background" style="margin-top: 40px">
+        <div class="backgroundImage"><!-- background image for text--></div>
+            <div style="margin-top: -330px; margin-bottom: 60px; font-size: 20px">
+                <h1> Support a classroom. Build a future. </h1>
+                <p><a href = "https://www.donorschoose.org/">DonorsChoose.org</a> is a US based nonprofit organization that allows individuals to donate money directly to
                public school classroom projects. Public school teachers post classroom project requests on the platform,
                and individuals have the option to donate money directly to fund these projects. The classroom projects
                range from pencils and books to computers and other expensive equipments for classrooms. In more than 10
                years of existence, this platform helped teachers in all US states to post more than 7700,000 classroom
-               project requests and raise more than $280,000,000. DonorsChoose.org has made the platform data open and
-               available for making discoveries and building applications. This dashboard is an interactive data
-               visualization that represents school donations broken down by different attributes.
-           </p>
-           <button type="button" class="intro_button btn btn-primary buttoncolor" autofocus onclick="introJs().start();">Start Dashboard Tour!</button>
-
+               project requests and raise more than $280,000,000.</p>
+                <p>DonorsChoose.org has made the platform data open and available for making discoveries and building
+                    applications. This dashboard is an interactive data visualization that represents school donations
+                    broken down by different attributes. Scroll down or click the "Take Dashboard Tour" above for more
+                    information</p>
+             </div>
 
     <!--FIRST ROW-->
     <div class = "row">
@@ -59,7 +55,7 @@
                 </div>
 
                 <!--DIV WITH ID FOR MAP-->
-                <div class="chart-stage" >
+                <div class="chart-stage chart-stage-white">
                     <div id="funding-map" data-step="1"
                      data-intro="This map allows you to select information per state by clicking on your chosen state.
                                 Or chose your state from the dropdown menu below"
@@ -73,7 +69,7 @@
                             <div class="chart-title">
                                 Select Your State
                             </div>
-                            <div class="chart-stage">
+                            <div class="chart-stage chart-stage-white">
                                 <div id="menu-select" data-step="10"
                                     data-intro="You can sort the information per state through this select box"
                                     style="font-weight: normal" data-position="right"></div>
@@ -96,7 +92,7 @@
                             <div class="chart-title">
                            Total Number of Donations
                              </div>
-                            <div class="chart-stage">
+                            <div class="chart-stage chart-stage-white">
                            <div id="number-projects-nd" data-step="2"
                                 data-intro="This box shows the total number of donations overall, or per state when a
                                             state is selected."
@@ -112,7 +108,7 @@
                            Total Donations in USD
                             </div>
 
-                         <div class="chart-stage">
+                         <div class="chart-stage chart-stage-white">
                            <div id="total-donations-nd" data-step="3"
                                 data-intro="This box shows the total amount of donations in USD overall, or per state
                                             when a state is selected."
@@ -231,7 +227,6 @@
        <!-- Focus Area -->
 
     </div> <!-- Close of third row-->
-
 
 
 
