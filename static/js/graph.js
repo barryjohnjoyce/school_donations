@@ -52,9 +52,6 @@ function makeGraphs(error, projectsJson, statesJson) {
    });
 
 
-
-
-
    //Calculate metrics
    var numProjectsByDate = dateDim.group();
    var numProjectsByResourceType = resourceTypeDim.group();
@@ -193,9 +190,6 @@ function makeGraphs(error, projectsJson, statesJson) {
         .renderLabel(false);
 
 
-
-
-
     cityChart
        .height(500)
         .width(500)
@@ -203,7 +197,7 @@ function makeGraphs(error, projectsJson, statesJson) {
        .innerRadius(0)
        .transitionDuration(1500)
        .dimension(schoolCity)
-       .group(numProjectsByCity)
+       .group(numProjectsByCity);
 
 
     fundingStatusmap
@@ -218,7 +212,7 @@ function makeGraphs(error, projectsJson, statesJson) {
         })
         .projection(d3.geo.albersUsa()
             .scale(600)
-            .translate([340, 150]))
+            .translate([310, 150]))
         .title(function (p) {
             return "State: " + p["key"]
                 + "\n"
