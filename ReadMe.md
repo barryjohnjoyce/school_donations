@@ -5,38 +5,50 @@
 
 ### What is this app for?
 
-This is the prototype frond-end website for the fictional band Union City.
+DonorsChoose.org is a US based nonprofit organization that allows individuals to donate money directly to public school
+classroom projects. Public school teachers post classroom project requests on the platform, and individuals have the
+option to donate money directly to fund these projects. The classroom projects range from pencils and books to computers
+ and other expensive equipments for classrooms. In more than 10 years of existence, this platform helped teachers in all
+ US states to post more than 7700,000 classroom project requests and raise more than $280,000,000. DonorsChoose.org has
+ made the platform data open and available for making discoveries and building applications.
 
 ### What does it do?
 
-The website showcases the band and publicises their availability for gigs.
+This app is an prototype interactive dashboard incorporating data visualization that represents school donations broken
+down by different attributes.
 
-### How does it work?
+### Design Background
 
-The website is designed from a blank HTML page but is styled with Bootstrap and uses HTML form validation. I have used
-the Code Institute's Project Resources folder for songs, videos, pics etc.
+The dashboard has been designed from a blank HTML web using elements of Bootstrap and Keen Dashboards. I have attempted
+to use a similar colour and design scheme as that on the DonorsChoose.org website (e.g. the use of a grey and white background,
+with some orange edging; the use of the main background image of DonorsChoose as the main background image on the dashboard).
 
 ## Features
 
-Fans can see and hear clips from the band's back catalogue and also new material as it becomes available. There are photos and bios of the
-band members. Fans and commercial enterprises can contact the band though the Contacts Page and subscribe to a newsletter. Potential customers
-can check dates for future bookings. There are working links to Facebook, Twitter and YouTube for future use.
-
+The dashboard allows users to visualise school donations broken down by various attributes. Users can filter the information
+by selecting a particular state through the interactive map or through a dropdown menu, which reflects throughout the graphs
+on the dashboard. A Dashboard Tutorial (utilising intro.js) can be accessed by clicking on the relevant button, which gives
+the user a tour of the entire dashboard, explaining each graph and the information that it contains.
 
 ## Tech Used
 
 ### Some the tech used includes:
 
-- [Bootstrap](http://getbootstrap.com/)
-    - Bootstrap has been used for certain design elements such as the navbar. The compiled javascript in Bootstrap is
-    also used to activate a Carousel. Media queries are used to make elements repsonsive.
+- [D3.js]
+    - This is a JavaScript based visualisation engine which renders interactive charts and graphs based on the data. D3
+    creates SVG based charts which are passed into HTML div blocks.
 
-- [Fonts]
-    - The band's logo has been designed using HTML, including the border-radius property and the Copperplate font.
+- [Dc.js]
+    - This is a JavaScript based wrapper library for D3.js which enables easy plotting of the charts.
 
-- [Calendar]
-    - a HTML calendar available for free from the Web has been utilised.
+- [Crossfilter.js]
+    - This is a JavaScript based data manipulation library that enables two-way data binding. Enable drill down based analysis.
 
-- [iTunes API]
-    - The "Our Music" page is linked to the iTunes API to allow fans to search for and purchase the band's commercial tracks.
+- [Queue.js]
+    - This is an asynchronous helper library for JavaScript.
 
+- [Mongo DB]
+    - This is a NoSQL Database used to convert and present data in JSON format.
+
+- [Flask]
+    - This is a Python-based micro-framework used to serve data from a server to a web-based interface.
