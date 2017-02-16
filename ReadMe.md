@@ -10,16 +10,17 @@ classroom projects. Public school teachers post classroom project requests on th
 option to donate money directly to fund these projects. The classroom projects range from pencils and books to computers
  and other expensive equipments for classrooms. In more than 10 years of existence, this platform helped teachers in all
  US states to post more than 7700,000 classroom project requests and raise more than $280,000,000. DonorsChoose.org has
- made the platform data open and available for making discoveries and building applications.
+ made the platform data open and available for making discoveries and building applications. This app uses some of this
+ date to build an interactive dashboard.
 
 ### What does it do?
 
-This app is an prototype interactive dashboard incorporating data visualization that represents school donations broken
-down by different attributes.
+This app is an prototype interactive dashboard incorporating data visualization (various graph types including pie charts,
+bar charts etc) that represent school donations broken down by different attributes.
 
 ### Design Background
 
-The dashboard has been designed from a blank HTML web using elements of Bootstrap and Keen Dashboards. I have attempted
+The dashboard has been designed from a blank HTML page using elements of Bootstrap and Keen Dashboards. I have attempted
 to use a similar colour and design scheme as that on the DonorsChoose.org website (e.g. the use of a grey and white background,
 with some orange edging; the use of the main background image of DonorsChoose as the main background image on the dashboard).
 
@@ -34,21 +35,24 @@ the user a tour of the entire dashboard, explaining each graph and the informati
 
 ### Some the tech used includes:
 
-- [D3.js]
+- D3.js
     - This is a JavaScript based visualisation engine which renders interactive charts and graphs based on the data. D3
     creates SVG based charts which are passed into HTML div blocks.
 
-- [Dc.js]
+- Dc.js
     - This is a JavaScript based wrapper library for D3.js which enables easy plotting of the charts.
 
-- [Crossfilter.js]
-    - This is a JavaScript based data manipulation library that enables two-way data binding. Enable drill down based analysis.
+- Crossfilter.js
+    - This is a JavaScript based data manipulation library that enables two-way data binding.
 
-- [Queue.js]
+- Queue.js
     - This is an asynchronous helper library for JavaScript.
 
-- [Mongo DB]
+- Mongo DB
     - This is a NoSQL Database used to convert and present data in JSON format.
 
-- [Flask]
+- Flask
     - This is a Python-based micro-framework used to serve data from a server to a web-based interface.
+
+- Heroku
+    - A polyglot cloud computing platform used to deploy and host the site.

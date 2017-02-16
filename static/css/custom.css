@@ -3,13 +3,13 @@
 
 /*Elements:*/
 
-body{
+body {
     background-color: #FAFAFA;
-    font-family: Rockwell,Georgia-Bold,serif;
+    font-family: Rockwell, Georgia-Bold, serif;
 }
 
-select.dc-select-menu{
-   background-color:  #1BB32A;
+select.dc-select-menu {
+    background-color: #1BB32A;
 }
 
 img {
@@ -17,81 +17,78 @@ img {
     padding: 20px 20px;
 }
 
-h1{
+h1 {
     color: black;
     text-align: center;
 }
 
-
-
 /*IDs*/
 
 #number-projects-nd {
-   font-size: 60px;
+    font-size: 60px;
 }
 
 #total-donations-nd {
-   font-size: 60px;
+    font-size: 60px;
 }
 
-#bottombutton{
+#bottombutton {
     text-align: center;
 }
 
 #total-projects {
 
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
+    width: 200px;
+    position: relative;
+    height: 60px;
+    font-size: 29px;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 0px;
 }
 
 #net-donations {
 
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
+    width: 200px;
+    position: relative;
+    height: 60px;
+    font-size: 29px;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 0px;
 }
 
-
-#phototext{
+#phototext {
     margin-top: -330px;
     margin-bottom: 60px;
     font-size: 20px;
     font-weight: 100;
 }
 
-#footerformat{
+#footerformat {
     text-align: center;
     padding: 20px;
     font-weight: bold;
-    }
+}
 
 /*Classes*/
 
 .dc-select-menu {
-   background: red;
-   width: 100%;
-   border: none;
-   position: relative;
-   height: 31px;
-   font-size: 15px;
-   color: white ;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 4px;
-   padding-bottom: 0px;
+    background: red;
+    width: 100%;
+    border: none;
+    position: relative;
+    height: 31px;
+    font-size: 15px;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 0px;
 }
 
 .my-bar-chart .x.axis text {
@@ -99,59 +96,58 @@ h1{
     transform: rotate(-45deg);
 }
 
-.chartBackground{
-   background-color: #FAFAFA;
-   color: black;
-   border: 2px solid black;
-   border-radius: 10px;
-   margin: 20px;
+.chartBackground {
+    background-color: #FAFAFA;
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 20px;
 }
 
-.chart-title{
-   color: black !important;
-   font-weight: bold;
+.chart-title {
+    color: black !important;
+    font-weight: bold;
 }
 
-.chart-stage-white{
-   background-color: #FFFFFF;
+.chart-stage-white {
+    background-color: #FFFFFF;
 }
 
 .titleDisplay {
     display: inline-block;
     margin-right: 55px;
     margin-top: 20px;
-    border: 5px solid  #EF5F3C;
+    border: 5px solid #EF5F3C;
     border-radius: 50px;
     padding: 10px;
 }
 
-.dashboardButton{
-   background-color: #1CBA2C;
-   border-color: #1CBA2C;
+.dashboardButton {
+    background-color: #1CBA2C;
+    border-color: #1CBA2C;
     margin-bottom: 10px;
 }
 
-.btn-primary:hover{
-   background-color:  #1BB32A;
-   border-color:  #1BB32A;
+.btn-primary:hover {
+    background-color: #1BB32A;
+    border-color: #1BB32A;
 }
 
 .btn-primary:focus {
-   border-color: #1CBA2C;
-   background-color:#1CBA2C ;
+    border-color: #1CBA2C;
+    background-color: #1CBA2C;
 }
 
-.topbar{
+.topbar {
     background-color: white;
     height: 100px;
     white-space: nowrap;
     text-align: center;
 
-
     border-top: 3px solid #EF5F3C;
 }
 
-.backgroundImage{
+.backgroundImage {
     background-image: url(https://cdn.donorschoose.net/images/homepage/homepage-intro-b.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -166,16 +162,16 @@ h1{
     z-index: -1;
 }
 
-.mainHeader{
-font-size: 40px;
+.mainHeader {
+    font-size: 40px;
     font-weight: 100;
 }
 
-.fontweigthnormal{
+.fontweigthnormal {
     font-weight: normal;
 }
 
 .dc-chart g.row text {
-   fill: black;
-   font-size: 12px;
+    fill: black;
+    font-size: 12px;
 }

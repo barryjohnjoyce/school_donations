@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>School Donations Dashboard</title>
-   <link rel="stylesheet" href="../static/lib/css/bootstrap.min.css">
-   <link rel="stylesheet" href="../static/lib/css/keen-dashboards.css">
-   <link rel="stylesheet" href="../static/lib/css/dc.css">
-   <link rel="stylesheet" href="../static/css/custom.css">
+    <title>School Donations Dashboard</title>
+    <link rel="stylesheet" href="../static/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/lib/css/keen-dashboards.css">
+    <link rel="stylesheet" href="../static/lib/css/dc.css">
+    <link rel="stylesheet" href="../static/css/custom.css">
     <link rel="stylesheet" href="../static/lib/css/introjs.css"/>
 
- </head>
+</head>
 <!--END OF HEAD
 
 <!--START OF BODY-->
@@ -17,221 +17,224 @@
 <!--NAVBAR-->
 <div class="navbar-fixed-top topbar" role="navigation">
 
-           <a href="https://www.donorschoose.org/"><img src="static/images/donorschooseimage.png" height="100%"></a>
-           <h1 class="titleDisplay">DonorsChoose.org Interactive Dashboard</h1>
-            <button type="button" class="intro_button btn btn-primary dashboardButton" autofocus onclick="introJs().start();">Take Dashboard Tour!</button>
+    <a href="https://www.donorschoose.org/"><img src="static/images/donorschooseimage.png" height="100%"></a>
+    <h1 class="titleDisplay">DonorsChoose.org Interactive Dashboard</h1>
+    <button type="button" class="intro_button btn btn-primary dashboardButton" autofocus onclick="introJs().start();">
+        Take Dashboard Tour!
+    </button>
 
 </div><!--END OF NAVBAR-->
 
 <!--NEW MAIN CONTAINER-->
-<div  id="outer" class="container-fluid background" style="margin-top: 40px">
-        <div class="backgroundImage"><!-- background image for text--></div>
-            <div id="phototext">
-                <h1 class="mainHeader"> Support a classroom. Build a future. </h1>
-                <p><a href = "https://www.donorschoose.org/">DonorsChoose.org</a> is a US based nonprofit organization that allows individuals to donate money directly to
-               public school classroom projects. Public school teachers post classroom project requests on the platform,
-               and individuals have the option to donate money directly to fund these projects. The classroom projects
-               range from pencils and books to computers and other expensive equipments for classrooms. In more than 10
-               years of existence, this platform helped teachers in all US states to post more than 7700,000 classroom
-               project requests and raise more than $280,000,000.</p>
-                <p>DonorsChoose.org has made the platform data open and available for making discoveries and building
-                    applications. This dashboard is an interactive data visualization that represents school donations
-                    broken down by different attributes. Scroll down or click the "Take Dashboard Tour" above  or at the
-                    bottom of this page for more information</p>
-             </div>
+<div id="outer" class="container-fluid background" style="margin-top: 40px">
+    <div class="backgroundImage"><!-- background image for text--></div>
+    <div id="phototext">
+        <h1 class="mainHeader"> Support a classroom. Build a future. </h1>
+        <p><a href="https://www.donorschoose.org/">DonorsChoose.org</a> is a US based nonprofit organization that allows
+            individuals to donate money directly to
+            public school classroom projects. Public school teachers post classroom project requests on the platform,
+            and individuals have the option to donate money directly to fund these projects. The classroom projects
+            range from pencils and books to computers and other expensive equipments for classrooms. In more than 10
+            years of existence, this platform helped teachers in all US states to post more than 7700,000 classroom
+            project requests and raise more than $280,000,000.</p>
+        <p>DonorsChoose.org has made the platform data open and available for making discoveries and building
+            applications. This dashboard is an interactive data visualization that represents school donations
+            broken down by different attributes. Scroll down or click the "Take Dashboard Tour" above or at the
+            bottom of this page for more information</p>
+    </div>
 
     <!--FIRST ROW-->
-    <div class = "row">
+    <div class="row">
 
         <!--FIRST COLUMN COL-SM-6-->
-        <div class = "col-sm-6"><!--1st column-->
+        <div class="col-sm-6"><!--1st column-->
 
             <!--WRAPPER FOR MAP-->
             <div class="chart-wrapper chartBackground">
 
                 <!--TITLE FOR MAP-->
-                <div class = "chart-title">
+                <div class="chart-title">
                     Hover Or Click Over Your State On The Map Or Use The Dropdown Box:
                 </div>
 
                 <!--DIV WITH ID FOR MAP-->
                 <div class="chart-stage chart-stage-white">
                     <div id="funding-map" data-step="1"
-                     data-intro="This map allows you to sort information by clicking on your chosen state.
+                         data-intro="This map allows you to sort information by clicking on your chosen state.
                                 Or select your state from the dropdown menu below"
-                     class="fontweigthnormal" data-position="top">
+                         class="fontweigthnormal" data-position="top">
                     </div>
                 </div> <!--class="chart-stage"-->
 
 
                 <!-- Dropdown menu select by state -->
                 <div class="chart-wrapper chartBackground">
-                            <div class="chart-title">
-                                Select Your State
-                            </div>
-                            <div class="chart-stage chart-stage-white">
-                                <div id="menu-select"></div>
-                            </div>
+                    <div class="chart-title">
+                        Select Your State
+                    </div>
+                    <div class="chart-stage chart-stage-white">
+                        <div id="menu-select"></div>
+                    </div>
                 </div>
-                  <!-- Close dropdown menu select by state-->
+                <!-- Close dropdown menu select by state-->
 
-            <!--END OF WRAPPER FOR MAP-->
+                <!--END OF WRAPPER FOR MAP-->
             </div>
 
-        <!--END OF FIRST COLUMN COL-SM-6-->
+            <!--END OF FIRST COLUMN COL-SM-6-->
         </div>
 
-       <!--START OF SECOND COLUMN COL-SM-6-->
-        <div class = "col-sm-6">
+        <!--START OF SECOND COLUMN COL-SM-6-->
+        <div class="col-sm-6">
 
-                <!-- TOTAL NUMBER OF DONATIONS BOX-->
-                    <div class = "col-sm-6">
-                        <div class = "chart-wrapper chartBackground">
-                            <div class="chart-title">
-                           Total Number of Donations
-                             </div>
-                            <div class="chart-stage chart-stage-white">
-                           <div id="number-projects-nd" data-step="2"
-                                data-intro="This box shows the total number of donations overall between 2002 and 2007, or per state when a
+            <!-- TOTAL NUMBER OF DONATIONS BOX-->
+            <div class="col-sm-6">
+                <div class="chart-wrapper chartBackground">
+                    <div class="chart-title">
+                        Total Number of Donations
+                    </div>
+                    <div class="chart-stage chart-stage-white">
+                        <div id="number-projects-nd" data-step="2"
+                             data-intro="This box shows the total number of donations overall between 2002 and 2007, or per state when a
                                             state is selected."
-                                class="fontweigthnormal" data-position="right"></div>
-                            </div>
-                         </div>
-                    </div> <!-- Close Donation Box Column Col-sm-3-->
+                             class="fontweigthnormal" data-position="right"></div>
+                    </div>
+                </div>
+            </div> <!-- Close Donation Box Column Col-sm-3-->
 
-               <!-- Total Donations in US Dollars -->
-                    <div class = "col-sm-6">
-                        <div class="chart-wrapper chartBackground">
-                            <div class="chart-title">
-                           Total Donations in USD
-                            </div>
+            <!-- Total Donations in US Dollars -->
+            <div class="col-sm-6">
+                <div class="chart-wrapper chartBackground">
+                    <div class="chart-title">
+                        Total Donations in USD
+                    </div>
 
-                         <div class="chart-stage chart-stage-white">
-                           <div id="total-donations-nd" data-step="3"
-                                data-intro="This box shows the total amount of donations in USD overall between 2002 and 2007, or per state
+                    <div class="chart-stage chart-stage-white">
+                        <div id="total-donations-nd" data-step="3"
+                             data-intro="This box shows the total amount of donations in USD overall between 2002 and 2007, or per state
                                             when a state is selected."
-                                class="fontweigthnormal" data-position="top"></div>
-                            </div>
-                        </div>
-                    </div> <!-- Close Total Donations in US dollars Col-sm-3 -->
+                             class="fontweigthnormal" data-position="top"></div>
+                    </div>
+                </div>
+            </div> <!-- Close Total Donations in US dollars Col-sm-3 -->
 
 
-
-        <!-- Timeline Chart -->
-         <div class = "col-sm-12">
-            <div class="chart-wrapper chartBackground">
-                       <div class="chart-title">
-                           Number of Donations
-                       </div>
-                       <div class="chart-stage chart-stage-white">
-                           <div id="time-chart" data-step="4"
-                                data-intro="This graph shows the number of donations per month between October 2002 and September 2007"
-                                class="fontweigthnormal" data-position="top"></div>
-                       </div>
-                 </div>
-        </div>
-               <!-- End of Timeline Chart -->
+            <!-- Timeline Chart -->
+            <div class="col-sm-12">
+                <div class="chart-wrapper chartBackground">
+                    <div class="chart-title">
+                        Number of Donations
+                    </div>
+                    <div class="chart-stage chart-stage-white">
+                        <div id="time-chart" data-step="4"
+                             data-intro="This graph shows the number of donations per month between October 2002 and September 2007"
+                             class="fontweigthnormal" data-position="top"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Timeline Chart -->
 
 
         </div> <!--"col-sm-6"-->
     </div> <!-- "row"-->
 
 
-
     <!--SECOND ROW-->
-   <div class="row">
+    <div class="row">
 
-       <div class="col-sm-6">
-                <!-- Primary Focus Area by total donations-->
+        <div class="col-sm-6">
+            <!-- Primary Focus Area by total donations-->
 
-           <div class="chart-wrapper chartBackground" >
-               <div class="chart-title">
-                   Primary Focus Area by Total Donations
-               </div>
-               <div class="chart-stage chart-stage-white">
-                   <div id="focus-area2" class="my-bar-chart fontweigthnormal" data-step="5"
-                     data-intro="This bar chart shows the total donations per primary focus area"
-                      data-position="top"></div>
-               </div>
-           </div>
+            <div class="chart-wrapper chartBackground">
+                <div class="chart-title">
+                    Primary Focus Area by Total Donations
+                </div>
+                <div class="chart-stage chart-stage-white">
+                    <div id="focus-area2" class="my-bar-chart fontweigthnormal" data-step="5"
+                         data-intro="This bar chart shows the total donations per primary focus area"
+                         data-position="top"></div>
+                </div>
+            </div>
 
-       <!-- Focus Area by total donations -->
-       </div>
+            <!-- Focus Area by total donations -->
+        </div>
 
-       <!-- Poverty -->
-       <div class="col-sm-6">
-           <div class="chart-wrapper chartBackground">
-               <div class="chart-title">
-                   Poverty Level
-               </div>
-               <div class="chart-stage chart-stage-white">
-                   <div id="poverty-level-row-chart" data-step="6"
-                        data-intro="This chart shows the number of projects per area depending on level of poverty"
-                        class="fontweigthnormal" data-position="top"></div>
-               </div>
-           </div>
-       </div>
-       <!-- Poverty -->
+        <!-- Poverty -->
+        <div class="col-sm-6">
+            <div class="chart-wrapper chartBackground">
+                <div class="chart-title">
+                    Poverty Level
+                </div>
+                <div class="chart-stage chart-stage-white">
+                    <div id="poverty-level-row-chart" data-step="6"
+                         data-intro="This chart shows the number of projects per area depending on level of poverty"
+                         class="fontweigthnormal" data-position="top"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Poverty -->
 
-   </div> <!--End of SECOND ROW-->
+    </div> <!--End of SECOND ROW-->
 
 
     <div class="row"> <!-- Start of Third Row-->
-                <!-- Resources -->
-               <div class="col-sm-4">
-                   <div class="chart-wrapper chartBackground">
-                       <div class="chart-title">
-                           Resources Type
-                       </div>
-                       <div class="chart-stage chart-stage-white">
-                           <div id="resource-type-row-chart" data-step="7"
-                                data-intro="This graph shows the total number of projects per resource type"
-                                class="fontweigthnormal" data-position="top"></div>
-                       </div>
-                   </div>
-               </div>
-               <!-- Resources -->
+        <!-- Resources -->
+        <div class="col-sm-4">
+            <div class="chart-wrapper chartBackground">
+                <div class="chart-title">
+                    Resources Type
+                </div>
+                <div class="chart-stage chart-stage-white">
+                    <div id="resource-type-row-chart" data-step="7"
+                         data-intro="This graph shows the total number of projects per resource type"
+                         class="fontweigthnormal" data-position="top"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Resources -->
 
 
-               <!-- funding Pie -->
-               <div class="col-sm-3">
-                   <div class="chart-wrapper chartBackground">
-                       <div class="chart-title">
-                           Funding Status
-                       </div>
-                       <div class="chart-stage chart-stage-white">
-                           <div id="funding-chart" data-step="8"
-                                data-intro="This pie-chart shows the number of projects that are completed, not completed and have expired"
-                                class="fontweigthnormal" data-position="top"></div>
-                       </div>
-                   </div>
-               </div>
-               <!-- funding Pie -->
+        <!-- funding Pie -->
+        <div class="col-sm-3">
+            <div class="chart-wrapper chartBackground">
+                <div class="chart-title">
+                    Funding Status
+                </div>
+                <div class="chart-stage chart-stage-white">
+                    <div id="funding-chart" data-step="8"
+                         data-intro="This pie-chart shows the number of projects that are completed, not completed and have expired"
+                         class="fontweigthnormal" data-position="top"></div>
+                </div>
+            </div>
+        </div>
+        <!-- funding Pie -->
 
 
-    <!-- Focus Area -->
-       <div class="col-sm-5">
-           <div class="chart-wrapper chartBackground">
-               <div class="chart-title">
-                   Primary Focus Area by Number of Projects
-               </div>
-               <div class="chart-stage chart-stage-white">
-                   <div id="focus-area" data-step="9"
-                     data-intro="This pie chart shows the number of projects per focus area"
-                     class="fontweigthnormal" data-position="top"></div>
-               </div>
-           </div>
-       </div>
-       <!-- Focus Area -->
+        <!-- Focus Area -->
+        <div class="col-sm-5">
+            <div class="chart-wrapper chartBackground">
+                <div class="chart-title">
+                    Primary Focus Area by Number of Projects
+                </div>
+                <div class="chart-stage chart-stage-white">
+                    <div id="focus-area" data-step="9"
+                         data-intro="This pie chart shows the number of projects per focus area"
+                         class="fontweigthnormal" data-position="top"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Focus Area -->
 
     </div> <!-- Close of third row-->
 
     <div id="bottombutton">
-        <button type="button" class="intro_button btn btn-primary dashboardButton" autofocus onclick="introJs().start();">Take Dashboard Tour!</button>
+        <button type="button" class="intro_button btn btn-primary dashboardButton" autofocus
+                onclick="introJs().start();">Take Dashboard Tour!
+        </button>
     </div>
 
     <footer id="footerformat">
-        <p>Copyright &copy; Barry Joyce/Code Institute 2016</p>
+        <p>Copyright &copy; Barry Joyce/Code Institute 2016/DonorsChoose.org</p>
     </footer>
 
 </div> <!-- Close of "new main container" id="outer" class= "container-fluid background-->
@@ -245,7 +248,7 @@
 
 <script src="../static/lib/js/keen.min.js"></script>
 <script src='../static/js/graph.js' type='text/javascript'></script>
-<script src= "../static/lib/js/intro.js" type="text/javascript"></script>
+<script src="../static/lib/js/intro.js" type="text/javascript"></script>
 
 
 </body>
